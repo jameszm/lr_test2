@@ -5,7 +5,7 @@ from numpy import *
 Yarr = []
 Xarr = []
 
-data = open("./adult.onehot", "r")
+data = open("./adult.data.onehot", "r")
 
 while True:
     line = data.readline()
