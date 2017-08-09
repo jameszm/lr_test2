@@ -1,6 +1,13 @@
 #!/usr/bin/python
 
 from sets import Set
+import sys
+
+if len(sys.argv) != 2:
+    print "param error"
+    sys.exit(-1)
+
+in_file = sys.argv[1]
 
 title = open("./title", "r")
 
@@ -20,7 +27,16 @@ for i in range(len(lines)):
         encoding[i][elems[j].strip(" ")] = code
     encoding[i]["?"] = [0]*len(elems)
 
-data = open("./adult.data", "r")
+'''
+for (k,v) in encoding.items():
+    for (k2,v2) in v.items():
+        line = str(k) + ":" + k2 + ":"
+        for v3 in v2:
+            line = line + str(v3) + ","
+        print line.strip(",")
+'''
+
+data = open(in_file, "r")
 
 while True:
     line = data.readline()
