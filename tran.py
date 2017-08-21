@@ -28,11 +28,6 @@ data.close()
 X = array(Xarr)
 Y = array(Yarr)
 
-'''
-for i in range(len(Y)):
-    print Y[i]
-'''
-
 A = dot(X.T, X)
 B = dot(X.T, Y)
 W = linalg.pinv(A).dot(B)

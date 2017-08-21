@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from numpy import *
+from sklearn.metrics import roc_auc_score
 
 W = loadtxt("./w")
 
@@ -33,5 +34,5 @@ Y = array(Yarr)
 
 Y2 = dot(X, W)
 
-for i in range(len(Y)):
-    print "%.8f,%d"%(Y2[i],Y[i])
+auc = roc_auc_score(Y, Y2)
+print "AUC:", auc
